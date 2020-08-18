@@ -8,8 +8,8 @@ const fetcher = (variables, token) => {
       query: `
       query userInfo($login: String!) {
         user(login: $login) {
-          # fetch only owner repos & not forks
-          repositories(ownerAffiliations: OWNER, isFork: false, first: 100) {
+          # fetch only owner repos
+          repositories(ownerAffiliations: OWNER, first: 100) {
             nodes {
               languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
                 edges {
@@ -73,7 +73,7 @@ async function fetchTopLanguages(username) {
     }, {});
 
   const topLangs = Object.keys(repoNodes)
-    .slice(0, 5)
+    .slice(0, 10)
     .reduce((result, key) => {
       result[key] = repoNodes[key];
       return result;
