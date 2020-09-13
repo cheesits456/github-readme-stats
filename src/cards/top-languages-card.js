@@ -44,7 +44,7 @@ const createLanguageTextNode = ({ langs, totalSize, x, y }) => {
       return createCompactLangNode({
         lang,
         x,
-        y: 12.5 * index + y,
+        y: 190,
         totalSize,
         index,
       });
@@ -52,7 +52,7 @@ const createLanguageTextNode = ({ langs, totalSize, x, y }) => {
     return createCompactLangNode({
       lang,
       x: 150,
-      y: 12.5 + 12.5 * index,
+      y: 190,
       totalSize,
       index,
     });
@@ -129,11 +129,11 @@ const renderTopLanguages = (topLangs, options = {}) => {
 
         const output = `
           <rect
-            mask="url(#rect-mask)" 
+            mask="url(#rect-mask)"
             data-testid="lang-progress"
-            x="${progressOffset}" 
+            x="${progressOffset}"
             y="0"
-            width="${progress}" 
+            width="${progress}"
             height="8"
             fill="${lang.color || "#858585"}"
           />
