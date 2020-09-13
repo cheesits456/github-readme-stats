@@ -44,7 +44,7 @@ const createLanguageTextNode = ({ langs, totalSize, x, y }) => {
       return createCompactLangNode({
         lang,
         x,
-        y: 190,
+        y: 12.5 * index + y,
         totalSize,
         index,
       });
@@ -52,7 +52,7 @@ const createLanguageTextNode = ({ langs, totalSize, x, y }) => {
     return createCompactLangNode({
       lang,
       x: 150,
-      y: 190,
+      y: 12.5 + 12.5 * index,
       totalSize,
       index,
     });
@@ -112,7 +112,7 @@ const renderTopLanguages = (topLangs, options = {}) => {
   // RENDER COMPACT LAYOUT
   if (layout === "compact") {
     width = width + 50;
-    height = 30 + (langs.length / 2 + 1) * 40;
+    height = 190;
 
     // progressOffset holds the previous language's width and used to offset the next language
     // so that we can stack them one after another, like this: [--][----][---]
