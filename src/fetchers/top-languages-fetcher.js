@@ -11,7 +11,7 @@ const fetcher = (variables, token) => {
           # fetch only owner repos
           repositories(ownerAffiliations: [OWNER, COLLABORATOR], isLocked: false, first: 100) {
             nodes {
-              languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              languages(first: 13, orderBy: {field: SIZE, direction: DESC}) {
                 edges {
                   size
                   node {
